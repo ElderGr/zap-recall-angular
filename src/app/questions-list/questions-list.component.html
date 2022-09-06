@@ -5,4 +5,8 @@
     (click)="handleSelectQuestion(question)"
     (newQuestionEvent)="handleQuestionResult($event)"
   ></app-question>
+  <app-footer
+    class="footer"
+    [questions]="questions"
+  ></app-footer>
 </div>

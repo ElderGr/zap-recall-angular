@@ -1,0 +1,13 @@
+.icon-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-list>img{
+  margin: 0 5px;
+}
+
+.footer-content-container{
+  text-align: center;
+}
