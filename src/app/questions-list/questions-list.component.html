@@ -1,0 +1,8 @@
+<div *ngFor="let question of questions">
+  <app-question
+    [question]="question"
+    [handleQuestionResult]="handleQuestionResult"
+    (click)="handleSelectQuestion(question)"
+    (newQuestionEvent)="handleQuestionResult($event)"
+  ></app-question>
+</div>

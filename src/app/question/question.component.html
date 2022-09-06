@@ -1,0 +1,36 @@
+<div >
+  <span
+    class="question-container question-container-closed"
+    *ngIf="!isOpen"
+    (click)="question.isRight === null && handleContainerOpen()"
+  >
+    <p
+      [ngClass]="question.isRight"
+    >
+      {{question.name}}
+    </p>
+    <img
+      width="25"
+      height="25"
+      [src]="imageSrc"
+    />
+  </span>
+  <div class="question-container question-container-open" *ngIf="isOpen">
+    <p>{{showAwnser ? question.awnser : question.text}}</p>
+    <img
+      (click)="toggleAwnser()"
+      width="30"
+      height="20"
+      src="../../assets/skip-icon.png"
+      *ngIf="!showAwnser"
+    />
+    <div
+      *ngIf="showAwnser"
+      class="options-container"
+    >
+      <button (click)="handleAwnser('not-remember')" class="option options-not-remember">Não lembrei</button>
+      <button (click)="handleAwnser('almost-remember')" class="option options-almost-remember">Quase não lembrei</button>
+      <button (click)="handleAwnser('zap')" class="option options-zap">Zap!</button>
+    </div>
+  </div>
+</div>

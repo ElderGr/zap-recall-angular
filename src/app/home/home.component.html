@@ -1,0 +1,8 @@
+<div class="app">
+  <div *ngIf="page === 'home'" class="main-container">
+    <img src="../../assets/logo.png" width="136" height="161" />
+    <h2>ZapRecall</h2>
+    <button (click)="chooseQuizz()">Iniciar Recall!</button>
+  </div>
+  <app-questions-list *ngIf="page === 'quizz'"></app-questions-list>
+</div>
