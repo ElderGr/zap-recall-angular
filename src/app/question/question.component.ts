@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 export class QuestionComponent implements OnInit {
   @Input() question: any
   @Input() handleQuestionResult: any
+  @Input() index: any
   @Output() newQuestionEvent = new EventEmitter<any>();
 
   isOpen: boolean = false

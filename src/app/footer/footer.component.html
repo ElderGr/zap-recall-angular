@@ -1,10 +1,11 @@
 <div class="footer-content-container">
-  <h2>🥳 Parabéns!</h2>
-  <h2>😥 Putz</h2>
-  <div>Ainda faltam alguns... Mas não desanime!</div>
-  <div>Você não esqueceu de nenhum flashcard!</div>
-  <p>0/4 concluídos</p>
+  <h2 *ngIf="askedQuestions.length === questions.length">{{titleResult}}</h2>
+  <div>{{textResult}}</div>
+  <p>{{askedQuestions.length}}/{{questions.length}} concluídos</p>
   <div class="icon-list" >
-    <img *ngFor="let question of questions" src="../../assets/not-remember-icon.png" />
+    <span
+      *ngFor="let awnser of awnsers"
+      [ngClass]="awnser"
+    ></span>
   </div>
 </div>

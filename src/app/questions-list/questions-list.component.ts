@@ -5,20 +5,23 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './questions-list.component.html',
   styleUrls: ['./questions-list.component.css']
 })
+
 export class QuestionsListComponent implements OnInit {
   questions: any = [
-    { id: 1, name: 'Pergunta 1', text: 'O que é JSX?', awnser: 'JSX é uma sintaxe para escrever HTML dentro do JS', isRight: null},
-    { id: 2, name: 'Pergunta 2', text: 'O que é JSX?', awnser: 'JSX é uma sintaxe para escrever HTML dentro do JS', isRight: null},
-    { id: 3, name: 'Pergunta 3', text: 'O que é JSX?', awnser: 'JSX é uma sintaxe para escrever HTML dentro do JS', isRight: null},
-    { id: 4, name: 'Pergunta 4', text: 'O que é JSX?', awnser: 'JSX é uma sintaxe para escrever HTML dentro do JS', isRight: null},
+    { id: 1, text: 'O que é JSX?', awnser: 'JSX é uma sintaxe para escrever HTML dentro do JS', isRight: null},
+    { id: 2, text: 'O que é React?', awnser: 'JSX é uma sintaxe para escrever HTML dentro do JS', isRight: null},
+    { id: 3, text: 'O que é Virtual DOM?', awnser: 'JSX é uma sintaxe para escrever HTML dentro do JS', isRight: null},
+    { id: 4, text: 'O que é React Native?', awnser: 'JSX é uma sintaxe para escrever HTML dentro do JS', isRight: null},
   ]
+
+  awnsers: string[] = []
 
   selectedQuestion: any = {}
 
   constructor() { }
 
   ngOnInit(): void {
-
+    this.questions = this.questions.sort(() => Math.random() - 0.5)
   }
 
   handleQuestionResult(obj: any){

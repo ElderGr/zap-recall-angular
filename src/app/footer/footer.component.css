@@ -4,10 +4,29 @@
   align-items: center;
 }
 
-.icon-list>img{
+.icon-list>span{
   margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 50%;
+}
+
+.zap{
+  background-image: url("../../assets/zap-icon.png");
+}
+
+.almost-remember{
+  background-image: url("../../assets/almost-remember-icon.png");
+}
+
+.not-remember{
+  background-image: url("../../assets/not-remember-icon.png");
 }
 
 .footer-content-container{
   text-align: center;
+  padding-top: 20px;
 }
