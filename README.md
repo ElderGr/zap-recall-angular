@@ -1,3 +1,9 @@
+<br />
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <img src="./src/assets/logo.png" width="136" height="161" />
+    <img src="./src/assets/ZapRecall.png" width="136" height="161" />
+</div>
+
 ## Requisitos do projeto principais
 - Componentização e dados
     - [x]  Os elementos da página devem ser componentizados em arquivos separados.
