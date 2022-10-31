@@ -1,7 +1,17 @@
 <br />
-<div style="display: flex; flex-direction: column; align-items: center;">
-    <img src="./src/assets/logo.png" width="136" height="161" />
-    <img src="./src/assets/ZapRecall.png" width="136" height="161" />
+<div align="center" >
+    <img src="./src/assets/logo.png" width="90" height="120" />
+    <p>
+      <img src="./src/assets/ZapRecall.png" width="136" height="30" />
+    </p>
+</div>
+
+## Tecnologias
+Aqui estão as tecnologias utilizadas nesse projeto:<br>
+
+<div>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
 </div>
 
 ## Requisitos do projeto principais
