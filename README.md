@@ -1,3 +1,4 @@
+## Requisitos do projeto principais
 - Componentização e dados
     - [x]  Os elementos da página devem ser componentizados em arquivos separados.
     - [x]  Os dados dinâmicos da página (como o *deck*, *flashcards*, etc) devem ser representados como *arrays* ou objetos no JavaScript e renderizados na tela.
@@ -23,3 +24,15 @@
     - [x]  Quando todos os flashcards forem respondidos...
         - [x]  A mensagem de parabéns deve ser exibida se somente as respostas dos *flashcards* forem “ZAP!” ou “Lembrei com esforço”.
             - [x]  Ao responder todos os *flashcards* e houver pelo menos um *status* "Incorreto", a mensagem de “Putz” deverá ser exibida.
+
+## Features complementares
+
+[] Incluir mais de um deck de questões
+[] Adicionar roteamento entre as telas
+[] Incluir integração com API Zap Recall
+[] Ranqueamento entre usuários 
+[] Criar meta de zaps por dia (sendo no minimo 1 zap por dia)
+[] Inclusão de um tour ou onboarding para explicar a aplicação
+[] Perfil para o usuário
+  [] Meu progresso x minha meta
+  
