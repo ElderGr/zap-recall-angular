@@ -16,4 +16,8 @@ export class HomeComponent implements OnInit {
   chooseQuizz() {
     this.page = 'quizz'
   }
+
+  goBackHome() {
+    this.page = 'home'
+  }
 }

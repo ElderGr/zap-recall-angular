@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { IQuestions } from '../types';
+import { defaultQuestionsValues } from './questions-list.constants';
 
 @Component({
   selector: 'app-questions-list',
@@ -7,16 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class QuestionsListComponent implements OnInit {
-  questions: any = [
-    { id: 1, text: 'O que é JSX?', awnser: 'JSX é uma sintaxe para escrever HTML dentro do JS', isRight: null},
-    { id: 2, text: 'O que é React?', awnser: 'JSX é uma sintaxe para escrever HTML dentro do JS', isRight: null},
-    { id: 3, text: 'O que é Virtual DOM?', awnser: 'JSX é uma sintaxe para escrever HTML dentro do JS', isRight: null},
-    { id: 4, text: 'O que é React Native?', awnser: 'JSX é uma sintaxe para escrever HTML dentro do JS', isRight: null},
-  ]
+
+  @Output() goBackHome = new EventEmitter();
+
+  questions: IQuestions[] = defaultQuestionsValues
 
   awnsers: string[] = []
 
-  selectedQuestion: any = {}
+  selectedQuestion: IQuestions = {} as IQuestions
 
   constructor() { }
 
@@ -24,8 +24,9 @@ export class QuestionsListComponent implements OnInit {
     this.questions = this.questions.sort(() => Math.random() - 0.5)
   }
 
-  handleQuestionResult(obj: any){
-    this.questions = this.questions.map((question: any) => {
+  handleQuestionResult(obj: IQuestions){
+    this.awnsers = [...this.awnsers, obj.awnser]
+    this.questions = this.questions.map(question => {
       if(question.id === obj.id){
         return {
           ...question,
@@ -37,7 +38,13 @@ export class QuestionsListComponent implements OnInit {
     })
   }
 
-  handleSelectQuestion(question: any){
+  handleSelectQuestion(question: IQuestions){
     this.selectedQuestion = question
+  }
+
+  handleResetQuestions(){
+    this.awnsers = []
+    this.questions = defaultQuestionsValues
+    this.goBackHome.emit()
   }
 }

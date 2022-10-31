@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { IQuestions } from '../types';
 
 @Component({
   selector: 'app-footer',
@@ -7,20 +8,30 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 })
 export class FooterComponent implements OnInit, OnChanges {
 
-  @Input() questions: any
-  @Input() awnsers: any
+  @Input() questions: IQuestions[] = []
+  @Input() awnsers: string[] = []
+  @Output() handleResetQuestions = new EventEmitter()
 
-  askedQuestions: any = []
+  askedQuestions: string[] = []
   titleResult: string = '';
   textResult: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
-    this.askedQuestions = this.questions.filter((question: any) => question.isRight !== null)
+    this.handleFinalResult()
+  }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    this.askedQuestions = changes['awnsers'].currentValue
+
+    this.handleFinalResult()
+  }
+
+  handleFinalResult(){
     if(this.askedQuestions.length === this.questions.length){
-      const hasIncorretAwnser = this.questions.find((question: any) => question.isRight === "not-remember")
+      const hasIncorretAwnser = this.questions.find(question => question.isRight === "not-remember")
+      console.log(hasIncorretAwnser)
 
       if(hasIncorretAwnser){
         this.titleResult = '😥 Putz'
@@ -32,7 +43,7 @@ export class FooterComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.awnsers = changes['questions'].currentValue.filter((question: any) => question.isRight !== null)
+  handleReset(){
+    this.handleResetQuestions.emit()
   }
 }

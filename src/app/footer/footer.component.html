@@ -4,8 +4,12 @@
   <p>{{askedQuestions.length}}/{{questions.length}} concluídos</p>
   <div class="icon-list" >
     <span
-      *ngFor="let awnser of awnsers"
-      [ngClass]="awnser"
+      *ngFor="let askedQuestion of askedQuestions"
+      [ngClass]="askedQuestion"
     ></span>
+  </div>
+
+  <div *ngIf="askedQuestions.length === questions.length" class="restart-button">
+    <button (click)="handleReset()">Reiniciar recall</button>
   </div>
 </div>

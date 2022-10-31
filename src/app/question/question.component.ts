@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { IQuestions } from '../types';
 
 @Component({
   selector: 'app-question',
@@ -6,10 +7,9 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./question.component.css']
 })
 export class QuestionComponent implements OnInit {
-  @Input() question: any
-  @Input() handleQuestionResult: any
-  @Input() index: any
-  @Output() newQuestionEvent = new EventEmitter<any>();
+  @Input() question: IQuestions = {} as IQuestions
+  @Input() index: number = 0
+  @Output() newQuestionEvent = new EventEmitter();
 
   isOpen: boolean = false
   showAwnser: boolean = false
