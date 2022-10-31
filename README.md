@@ -27,12 +27,12 @@
 
 ## Features complementares
 
-[] Incluir mais de um deck de questões
-[] Adicionar roteamento entre as telas
-[] Incluir integração com API Zap Recall
-[] Ranqueamento entre usuários 
-[] Criar meta de zaps por dia (sendo no minimo 1 zap por dia)
-[] Inclusão de um tour ou onboarding para explicar a aplicação
-[] Perfil para o usuário
-  [] Meu progresso x minha meta
+- [ ] Incluir mais de um deck de questões
+- [ ] Adicionar roteamento entre as telas
+- [ ] Incluir integração com API Zap Recall
+- [ ] Ranqueamento entre usuários 
+- [ ] Criar meta de zaps por dia (sendo no minimo 1 zap por dia)
+- [ ] Inclusão de um tour ou onboarding para explicar a aplicação
+- [ ] Perfil para o usuário
+  - [ ] Meu progresso x minha meta
   
